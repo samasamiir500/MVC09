@@ -8,7 +8,7 @@ using MVC03.PL.Dtos;
 
 namespace MVC03.PL.Controllers
 {
-    [Authorize]
+   
     public class DepartmentController : Controller
     {
        // private readonly IDepartmentRepository _deptRepository;

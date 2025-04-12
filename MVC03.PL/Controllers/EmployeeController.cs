@@ -8,7 +8,7 @@ using MVC03.PL.Helpers;
 
 namespace MVC03.PL.Controllers
 {
-    [Authorize]
+    
     public class EmployeeController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -55,7 +55,7 @@ namespace MVC03.PL.Controllers
             ViewData["departments"] = departments;
             return View();
         }
-
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task< IActionResult> Create(EmployeeDto model)
@@ -114,6 +114,7 @@ namespace MVC03.PL.Controllers
             return View(dto);
         }
 
+       
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -147,7 +148,7 @@ namespace MVC03.PL.Controllers
                     CreateAt = model.CreateAt,
                     Email = model.Email,
                     ImageName = model.ImageName,
-                  //  DepartmentId = model.DepartmentId,
+                    DepartmentId = model.DepartmentId,
 
 
                 };
@@ -207,7 +208,7 @@ namespace MVC03.PL.Controllers
             return await Details(id, "Delete");
         }
 
-
+       
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Delete([FromRoute] int id, EmployeeDto model)
